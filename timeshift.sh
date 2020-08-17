@@ -39,8 +39,8 @@ heure=$(date +%Hh%M)
 
 chkDef() {
 	case "$CHK_REP" in
-		"$CHECK") sudo timeshift --list && sudo timeshift --check && notify-send -i dialog-ok "Timeshift" "Terminée avec succès le $date à $heure" -t 2000 && exit 0 || zenity --warning --height 80 --width 400 --title "EREUR" --text "Il y a eu une erreur de synchronisation des dossiers. Veuillez démonter la partition et recommencer." && exit 1;;
-		"$CREATE") sudo timeshift --list && timeshift --create --comments "ondemand" --tags H && notify-send -i dialog-ok "Timeshift" "Terminée avec succès le $date à $heure" -t 2000 && exit 0 || zenity --warning --height 80 --width 400 --title "EREUR" --text "Il y a eu une erreur de synchronisation des dossiers. Veuillez démonter la partition et recommencer." && exit 1;;
+		"$CHECK") sudo timeshift --list && sudo timeshift --check && notify-send -i dialog-ok "Timeshift" "Terminée avec succès le $date à $heure" -t 2000 && sudo timeshift --list && exit 0 || zenity --warning --height 80 --width 400 --title "EREUR" --text "Il y a eu une erreur de synchronisation des dossiers. Veuillez démonter la partition et recommencer." && sudo timeshift --list && exit 1;;
+		"$CREATE") sudo timeshift --list && sudo timeshift --create --comments "on demand" --tags D && notify-send -i dialog-ok "Timeshift" "Terminée avec succès le $date à $heure" -t 2000 && sudo timeshift --list && exit 0 || zenity --warning --height 80 --width 400 --title "EREUR" --text "Il y a eu une erreur de synchronisation des dossiers. Veuillez démonter la partition et recommencer." && sudo timeshift --list && exit 1;;
 
 		"$LIST") sudo timeshift --list;;
 	esac
