@@ -1,6 +1,7 @@
 # linux-timeshift
 
 ![Creative Commons](cc.png)
+
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 
 <p>Un script shell qui permet de faire une sauvegarde grâce à l'application timeshift. Pas besoin de lancer l'application, juste de lancer le script pour vérifier si un backup peut être fait ou simplement pour réaliser un nouveau backup. Vous remarquerez que les nouveaux backups auront comme tag 'hourly', ce qui permet de supprimer automatiquement les plus anciens. 
